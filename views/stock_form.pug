@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method="POST" action="")
+        div.form-group
+            label(for="device") Device:
+            select#device.form-control(type="select", placeholder="Select device", name="device", require="true")
+                - device_list.sort(function(a,b) {let textA = a.name.toUpperCase(); let textB = b.name.toUpperCase(); return (textA < textB) ? -1: (textA > textB) ? 1 : 0;});
+                for device in device_list
+                    if stock
+                        option(value=device._id selected=(stock.device.toString()==device._id.toString() ? "selected": false)) #{device.name}
+                    else
+                        option(value=device._id) #{device.name}
+        div.form-group
+            label(for="number") Number
+

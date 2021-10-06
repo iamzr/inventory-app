@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 Device: #{device.brand.name} #{device.name}
+
+    p #[strong Screen size:] #{device.screen_size}
+    p #[strong Ram:] #{device.ram}
+
+    p #[strong Status:] #{stock}
+
+    hr
+    p
+        a(href="../" + device.url + "/delete") Delete device
+    p
+        a(href="../" + device.url + "/update") Update device
+        

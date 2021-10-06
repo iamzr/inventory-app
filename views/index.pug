@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  if error 
+    p Error in getting data
+  else
+    ul
+      li #[strong Devices:] !{data.device_count}
+      li #[strong Total Stock:] !{data.total_stock}
+      li #[strong Brands available:] !{data.brand_count}
+      li #[strong Device Types:] !{data.category_count}

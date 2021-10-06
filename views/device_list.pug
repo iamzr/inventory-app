@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1= title
+    ul
+        each device in device_list
+            li
+                a(href=device.url) #{device.brand.name} #{device.name} 
+        else
+            li There are no devices.

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Category: #{category.name}
+
+    div(style="margin-left: 20p; margin-top: 20px")
+
+        h4 Devices
+            each device in category_devices
+                dt 
+                    a(href="../" + device.url) #{device.name}
+                    dd #{device.ram}
+
+    hr
+    p
+        a(href="../" + category.url + "/delete") Delete category
+    p
+        a(href="../" + category.url + "/update") Update category

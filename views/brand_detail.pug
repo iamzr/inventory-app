@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    h1 Brand: #{brand.name}
+
+    h4 Devices: 
+    div(style="margin-left:20px;margin-top:20px")
+
+    each device in brand_devices
+        dt
+            a(href="../" + device.url) #{device.name}
+    
+    else
+        p This brand has no devices.
+
+    hr
+    p
+        a(href="../" + brand.url + "/delete") Delete brand
+    p 
+        a(href="../" + brand.url + "/update") Update brand

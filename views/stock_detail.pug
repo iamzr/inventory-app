@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 ID: #{stock.id}
+
+    p #[strong Device:] 
+        a(href="../" + stock.device.url) #{stock.device.name}
+    p #[strong Number in stock:] #{stock.number_in_stock}

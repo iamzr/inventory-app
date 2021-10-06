@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1 #{title}: #{brand.name}
+
+    if brand_devices.length
+        p #[strong Delete the following devices before attempting to delete this brand.]
+
+        div(style="margin-left:20px;margin-top:20px")
+
+        h4 Devices
+
+        dl
+        each device in brand_devices
+            dt 
+                a(href=device.url) #{device.name}
+    
+    else
+        p Do you really want to delete this Brand?
+
+        form(method="POST", action="")
+            div.form-group
+                input#brandid.form-control(type="hidden", name="brandid", required="true", value=brand._id)
+
+            button.btn.btn-primary(type="submit") Delete

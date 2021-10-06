@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 #{title}: #{device.name}
+
+    p Do you reall want to delete this device?
+
+    form(method="POST" action="")
+        div.form-group
+            input#deviceid.form-control(type="hidden", name="deviceid", required="true", value=device._id)
+
+        button.btn.btn-primary(type="submit") Delete

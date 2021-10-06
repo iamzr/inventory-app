@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1=title
+
+    ul 
+        each stock in stock_list
+            li
+                a(href=stock.url) #{stock.device.name} - #{stock.number_in_stock}  
+        else
+            li There are no stocks
